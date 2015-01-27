@@ -1,0 +1,25 @@
+<html>
+
+<body>
+  <header>
+
+    <h1>Hogwarts Register</h1>
+  </header>
+  <ul>
+
+    <% students.each do |key,student| %>
+    <li><%= student[:name] %> is <%= student[:age] %> years old. This student's favorite spell is <%= student[:spell] %> This student has an id of <a href="/student/<%= student[:id] %>"><%= student[:id] %></a>.</li>
+    <% end %>
+  </ul>
+
+  <h3> Add a student here: </h3>
+  <form action="/student" method="post">
+    <input type ="text" name="name" placeholder="student's name" required>
+    <input type = "text" name="age" placeholder="student's age" required>
+    <input type = "text" name="spell" placeholder="favorite spell" required>
+    <button> ADD IT!</button>
+  </form>
+
+
+</body>
+</html>
